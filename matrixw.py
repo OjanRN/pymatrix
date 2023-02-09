@@ -1,5 +1,7 @@
 ## By m7d9ng github.com/ojanrn
-import random, os, time
+import random, os, time, sys
+
+
 
 def matrix_get(char_count):
     wordlist = "abcdefghiojklmnopqrstuvwxyz1234567890"
@@ -13,7 +15,7 @@ def matrix_get(char_count):
 def matrix_line(matrix_list):
     print_list = []
     for chars in matrix_list:
-        des_put = random.randint(0,1)
+        des_put = random.randint(0,4)
         if des_put == 0:
             print_list.append(chars)
         else:
@@ -25,12 +27,12 @@ def term_settings():
     term_width = term_size.columns
     return term_width
     
-if __name__ == "__main__":
+def main():
     while True:
         current_term_width = term_settings()
         base_term = matrix_get(current_term_width)
         print("".join(matrix_line(base_term)))
         time.sleep(0.01)
-
+main()
 
 
